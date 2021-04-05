@@ -1,12 +1,12 @@
 import axios from 'axios'
 import scheduleMapper from './scheduleMapper'
- const url = "http://ergast.com/api/f1/2021.json";
+const url = "http://ergast.com/api/f1/2021.json";
 
 export default async function getData(setSchedule) {
     try {
-      const data = await axios.get(url);
-      setSchedule((data));
+      const {data}  = await axios.get(url);
+      setSchedule((scheduleMapper(data)));
     } catch (e) {
-      // console.log(e);
+      alert('something went wrong');
     }
   }

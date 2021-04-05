@@ -1,6 +1,7 @@
 import "./App.css";
 import getData from './getData'
 import React, { useState, useEffect } from "react";
+import RaceCard from './RaceCard'
 
 
 export default function App() {
@@ -8,6 +9,6 @@ export default function App() {
    const getSchedule = () => getData(setSchedule)
   useEffect(() => {
     getSchedule()
-  }, []);
-  return <div className="App">{JSON.stringify(schedule)}</div>;
+  }, [schedule]);
+  return <div className="App">{schedule.map(race => <RaceCard {...race}/> )}</div>
 }
