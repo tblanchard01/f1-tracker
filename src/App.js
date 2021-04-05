@@ -1,25 +1,21 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import './App.css';
+import "./App.css";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 
-function App() {
+const url = "http://ergast.com/api/f1/2021.json";
 
-  const [schedule, setSchedule] = useState({})
-
-  useEffect(() => {
-    async function getSchedule(){
-      const data = await axios.get('http://ergast.com/api/f1/2021.json')
-      setSchedule(data)
-
+export default function App() {
+  const [schedule, setSchedule] = useState({});
+  async function getData() {
+    try {
+      const data = await axios.get(url);
+      setSchedule(data);
+    } catch (e) {
+      // console.log(e);
     }
-    getSchedule()
-
-  }, [])
-  return (
-    <div className="App">
-      <div>{JSON.stringify(schedule)} </div>
-    </div>
-  );
+  }
+  useEffect(() => {
+    getData();
+  }, []);
+  return <div className="App">{JSON.stringify(schedule)}</div>;
 }
-
-export default App;
