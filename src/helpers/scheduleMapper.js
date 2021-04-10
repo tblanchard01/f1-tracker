@@ -4,6 +4,7 @@ export default function scheduleMapper({
   },
 }) {
   return races && races.map(({raceName, date, time}, key) => {
-   return {key,raceName, date, time}
+    const relativeTime = getRelativeTime(date)
+   return {key,raceName, date, time, relativeTime }
   });
 }
