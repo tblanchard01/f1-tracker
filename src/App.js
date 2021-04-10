@@ -5,7 +5,7 @@ import RaceCard from './RaceCard'
 
 
 export default function App() {
-  const [schedule, setSchedule] = useState({});
+  const [schedule, setSchedule] = useState([]);
    const getSchedule = () => getData(setSchedule)
   useEffect(() => {
     getSchedule()
