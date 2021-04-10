@@ -9,6 +9,6 @@ export default function App() {
    const getSchedule = () => getData(setSchedule)
   useEffect(() => {
     getSchedule()
-  }, [schedule]);
+  }, []);
   return <div className="App">{schedule.map(race => <RaceCard {...race}/> )}</div>
 }

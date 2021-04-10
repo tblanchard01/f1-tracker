@@ -3,7 +3,7 @@ export default function scheduleMapper({
     RaceTable: { Races: races },
   },
 }) {
-  return races && races.map(({raceName, date, time}) => {
-   return {raceName, date, time}
+  return races && races.map(({raceName, date, time}, key) => {
+   return {key,raceName, date, time}
   });
 }
