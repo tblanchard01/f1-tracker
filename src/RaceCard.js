@@ -1,8 +1,8 @@
 import localTimeMapper from "./helpers/localTimeMapper";
 import deltaTimeMapper from "./helpers/deltaTimeMapper";
 
-export default function RaceCard({ raceName, date, time }) {
-  
+export default function RaceCard({ raceName, date, time, deltaTime, localTime }) {
+  console.log({deltaTime, localTime});
   return (
     <div>
       <h1>{raceName}</h1>

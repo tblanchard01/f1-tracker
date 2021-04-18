@@ -10,5 +10,6 @@ export default function App() {
   useEffect(() => {
     getSchedule()
   }, []);
+  console.log('this is schedule in app', schedule)
   return <div className="App">{schedule.map(race => <RaceCard {...race}/> )}</div>
 }

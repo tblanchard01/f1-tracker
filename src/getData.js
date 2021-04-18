@@ -1,5 +1,5 @@
 import axios from 'axios'
-import scheduleMapper from './scheduleMapper'
+import scheduleMapper from './helpers/scheduleMapper'
 const url = "http://ergast.com/api/f1/2021.json";
 
 export default async function getData(setSchedule) {
