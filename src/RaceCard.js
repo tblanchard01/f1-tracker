@@ -2,7 +2,7 @@ import relativeTimeMapper from "./helpers/relativeTimeMapper";
 import deltaTimeMapper from "./helpers/deltaTimeMapper";
 
 export default function RaceCard({ raceName, date, time }) {
-    // TODO get todays date in UTC 
+  
   return (
     <div>
       <h1>{raceName}</h1>
