@@ -8,13 +8,16 @@ export default function scheduleMapper({
   return (
     races &&
     races.map(({ raceName, date, time }, key) => {
+      const {deltaTime, formattedDelta} = deltaTimeMapper({ date })
+
       return {
         key,
         raceName,
-        date,
-        time,
+        deltaTime,
+        formattedDelta,
         localTime: localTimeMapper({ date, time }),
-        deltaTime: deltaTimeMapper({ date }),
+
+
       };
     })
   );
